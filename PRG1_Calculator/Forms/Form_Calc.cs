@@ -1,12 +1,12 @@
 namespace PRG1_Calculator
 {
-    public partial class Form1 : Form
+    public partial class Form_Calc : Form
     {
         private double accumulator = 0;
         private string currentInput = "";
         private string operation = "";
 
-        public Form1()
+        public Form_Calc()
         {
             InitializeComponent();
         }
