@@ -5,7 +5,6 @@ namespace PRG1_Calculator
         private double accumulator = 0;
         private string userInput = "";
         private string operation = "";
-        private double storage = 0;
         private float originalFontSizeTextBox, originalFontSizeButton, originalFormWidth, originalFormHeight;
 
         public Form1()
@@ -156,14 +155,12 @@ namespace PRG1_Calculator
 
         private void btn_storeInMemory_Click(object sender, EventArgs e)
         {
-            storage = double.Parse(txtB_Show.Text);
-            txtB_Show.Text = storage.ToString();
+            txtB_Show.Text = "Kommande funktion";
         }
 
         private void btn_catchFromMemory_Click(object sender, EventArgs e)
         {
-            storage = double.Parse(txtB_Show.Text);
-            txtB_Show.Text = storage.ToString();
+            txtB_Show.Text = "Kommande funktion";
         }
     }
 }
