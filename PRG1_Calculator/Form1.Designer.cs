@@ -48,6 +48,8 @@
             btn_PlusMinus = new Button();
             btn_multiply = new Button();
             btn_clear = new Button();
+            btn_storeInMemory = new Button();
+            btn_catchFromMemory = new Button();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -77,6 +79,8 @@
             tableLayoutPanel1.Controls.Add(btn_PlusMinus, 0, 5);
             tableLayoutPanel1.Controls.Add(btn_multiply, 3, 1);
             tableLayoutPanel1.Controls.Add(btn_clear, 2, 1);
+            tableLayoutPanel1.Controls.Add(btn_storeInMemory, 1, 1);
+            tableLayoutPanel1.Controls.Add(btn_catchFromMemory, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -134,7 +138,7 @@
             btn_0.Location = new Point(95, 413);
             btn_0.Name = "btn_0";
             btn_0.Size = new Size(86, 80);
-            btn_0.TabIndex = 3;
+            btn_0.TabIndex = 9;
             btn_0.Text = "0";
             btn_0.UseVisualStyleBackColor = true;
             btn_0.Click += NumberButton_Click;
@@ -146,7 +150,7 @@
             btn_comma.Location = new Point(187, 413);
             btn_comma.Name = "btn_comma";
             btn_comma.Size = new Size(86, 80);
-            btn_comma.TabIndex = 4;
+            btn_comma.TabIndex = 15;
             btn_comma.Text = ",";
             btn_comma.UseVisualStyleBackColor = true;
             // 
@@ -157,7 +161,7 @@
             btn_equal.Location = new Point(279, 413);
             btn_equal.Name = "btn_equal";
             btn_equal.Size = new Size(87, 80);
-            btn_equal.TabIndex = 5;
+            btn_equal.TabIndex = 14;
             btn_equal.Text = "=";
             btn_equal.UseVisualStyleBackColor = true;
             btn_equal.Click += btn_equal_Click;
@@ -169,10 +173,10 @@
             btn_plus.Location = new Point(279, 331);
             btn_plus.Name = "btn_plus";
             btn_plus.Size = new Size(87, 76);
-            btn_plus.TabIndex = 6;
+            btn_plus.TabIndex = 10;
             btn_plus.Text = "+";
             btn_plus.UseVisualStyleBackColor = true;
-            btn_plus.Click += OperationButton_Click;
+            btn_plus.Click += OperatorButton_Click;
             // 
             // btn_minus
             // 
@@ -181,10 +185,10 @@
             btn_minus.Location = new Point(279, 249);
             btn_minus.Name = "btn_minus";
             btn_minus.Size = new Size(87, 76);
-            btn_minus.TabIndex = 7;
+            btn_minus.TabIndex = 11;
             btn_minus.Text = "-";
             btn_minus.UseVisualStyleBackColor = true;
-            btn_minus.Click += OperationButton_Click;
+            btn_minus.Click += OperatorButton_Click;
             // 
             // btn_6
             // 
@@ -193,7 +197,7 @@
             btn_6.Location = new Point(187, 249);
             btn_6.Name = "btn_6";
             btn_6.Size = new Size(86, 76);
-            btn_6.TabIndex = 8;
+            btn_6.TabIndex = 5;
             btn_6.Text = "6";
             btn_6.UseVisualStyleBackColor = true;
             btn_6.Click += NumberButton_Click;
@@ -205,7 +209,7 @@
             btn_5.Location = new Point(95, 249);
             btn_5.Name = "btn_5";
             btn_5.Size = new Size(86, 76);
-            btn_5.TabIndex = 9;
+            btn_5.TabIndex = 4;
             btn_5.Text = "5";
             btn_5.UseVisualStyleBackColor = true;
             btn_5.Click += NumberButton_Click;
@@ -217,7 +221,7 @@
             btn_4.Location = new Point(3, 249);
             btn_4.Name = "btn_4";
             btn_4.Size = new Size(86, 76);
-            btn_4.TabIndex = 10;
+            btn_4.TabIndex = 3;
             btn_4.Text = "4";
             btn_4.UseVisualStyleBackColor = true;
             btn_4.Click += NumberButton_Click;
@@ -229,10 +233,10 @@
             btn_divided.Location = new Point(279, 167);
             btn_divided.Name = "btn_divided";
             btn_divided.Size = new Size(87, 76);
-            btn_divided.TabIndex = 11;
+            btn_divided.TabIndex = 12;
             btn_divided.Text = "/";
             btn_divided.UseVisualStyleBackColor = true;
-            btn_divided.Click += OperationButton_Click;
+            btn_divided.Click += OperatorButton_Click;
             // 
             // btn_9
             // 
@@ -241,7 +245,7 @@
             btn_9.Location = new Point(187, 167);
             btn_9.Name = "btn_9";
             btn_9.Size = new Size(86, 76);
-            btn_9.TabIndex = 12;
+            btn_9.TabIndex = 8;
             btn_9.Text = "9";
             btn_9.UseVisualStyleBackColor = true;
             btn_9.Click += NumberButton_Click;
@@ -253,7 +257,7 @@
             btn_8.Location = new Point(95, 167);
             btn_8.Name = "btn_8";
             btn_8.Size = new Size(86, 76);
-            btn_8.TabIndex = 13;
+            btn_8.TabIndex = 7;
             btn_8.Text = "8";
             btn_8.UseVisualStyleBackColor = true;
             btn_8.Click += NumberButton_Click;
@@ -265,7 +269,7 @@
             btn_7.Location = new Point(3, 167);
             btn_7.Name = "btn_7";
             btn_7.Size = new Size(86, 76);
-            btn_7.TabIndex = 14;
+            btn_7.TabIndex = 6;
             btn_7.Text = "7";
             btn_7.UseVisualStyleBackColor = true;
             btn_7.Click += NumberButton_Click;
@@ -290,7 +294,7 @@
             btn_PlusMinus.Location = new Point(3, 413);
             btn_PlusMinus.Name = "btn_PlusMinus";
             btn_PlusMinus.Size = new Size(86, 80);
-            btn_PlusMinus.TabIndex = 16;
+            btn_PlusMinus.TabIndex = 17;
             btn_PlusMinus.Text = "-/+";
             btn_PlusMinus.UseVisualStyleBackColor = true;
             // 
@@ -301,10 +305,10 @@
             btn_multiply.Location = new Point(279, 85);
             btn_multiply.Name = "btn_multiply";
             btn_multiply.Size = new Size(87, 76);
-            btn_multiply.TabIndex = 17;
+            btn_multiply.TabIndex = 13;
             btn_multiply.Text = "*";
             btn_multiply.UseVisualStyleBackColor = true;
-            btn_multiply.Click += OperationButton_Click;
+            btn_multiply.Click += OperatorButton_Click;
             // 
             // btn_clear
             // 
@@ -312,10 +316,32 @@
             btn_clear.Location = new Point(187, 85);
             btn_clear.Name = "btn_clear";
             btn_clear.Size = new Size(86, 76);
-            btn_clear.TabIndex = 18;
+            btn_clear.TabIndex = 16;
             btn_clear.Text = "C";
             btn_clear.UseVisualStyleBackColor = true;
             btn_clear.Click += btn_clear_Click;
+            // 
+            // btn_storeInMemory
+            // 
+            btn_storeInMemory.Dock = DockStyle.Fill;
+            btn_storeInMemory.Location = new Point(95, 85);
+            btn_storeInMemory.Name = "btn_storeInMemory";
+            btn_storeInMemory.Size = new Size(86, 76);
+            btn_storeInMemory.TabIndex = 18;
+            btn_storeInMemory.Text = "Lagra";
+            btn_storeInMemory.UseVisualStyleBackColor = true;
+            btn_storeInMemory.Click += btn_storeInMemory_Click;
+            // 
+            // btn_catchFromMemory
+            // 
+            btn_catchFromMemory.Dock = DockStyle.Fill;
+            btn_catchFromMemory.Location = new Point(3, 85);
+            btn_catchFromMemory.Name = "btn_catchFromMemory";
+            btn_catchFromMemory.Size = new Size(86, 76);
+            btn_catchFromMemory.TabIndex = 19;
+            btn_catchFromMemory.Text = "Hämta";
+            btn_catchFromMemory.UseVisualStyleBackColor = true;
+            btn_catchFromMemory.Click += btn_catchFromMemory_Click;
             // 
             // Form1
             // 
@@ -352,5 +378,7 @@
         private Button btn_PlusMinus;
         private Button btn_multiply;
         private Button btn_clear;
+        private Button btn_storeInMemory;
+        private Button btn_catchFromMemory;
     }
 }
