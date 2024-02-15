@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PRG1_Calculator
+namespace PRG1_Calculator.Models
 {
-    internal interface ISum
+    internal interface IProduct
     {
-        double Add(double a, double b);
+        double Multiply(double a, double b);
     }
 }

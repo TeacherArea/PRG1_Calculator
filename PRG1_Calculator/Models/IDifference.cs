@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PRG1_Calculator
+namespace PRG1_Calculator.Models
 {
-    internal interface IQuot
+    internal interface IDifference
     {
-        double Divide(double a, double b);
+        double Subtract(double a, double b);
     }
 }

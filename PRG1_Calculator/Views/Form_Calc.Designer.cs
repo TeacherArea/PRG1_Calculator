@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Calc));
             tableLayoutPanel1 = new TableLayoutPanel();
             btn_1 = new Button();
             btn_2 = new Button();
             btn_3 = new Button();
             btn_0 = new Button();
-            btn_comma = new Button();
+            btn_decimal = new Button();
             btn_equal = new Button();
             btn_plus = new Button();
             btn_minus = new Button();
@@ -64,7 +65,7 @@
             tableLayoutPanel1.Controls.Add(btn_2, 1, 4);
             tableLayoutPanel1.Controls.Add(btn_3, 2, 4);
             tableLayoutPanel1.Controls.Add(btn_0, 1, 5);
-            tableLayoutPanel1.Controls.Add(btn_comma, 2, 5);
+            tableLayoutPanel1.Controls.Add(btn_decimal, 2, 5);
             tableLayoutPanel1.Controls.Add(btn_equal, 3, 5);
             tableLayoutPanel1.Controls.Add(btn_plus, 3, 4);
             tableLayoutPanel1.Controls.Add(btn_minus, 3, 3);
@@ -102,7 +103,7 @@
             btn_1.Location = new Point(3, 331);
             btn_1.Name = "btn_1";
             btn_1.Size = new Size(86, 76);
-            btn_1.TabIndex = 0;
+            btn_1.TabIndex = 1;
             btn_1.Text = "1";
             btn_1.UseVisualStyleBackColor = true;
             btn_1.Click += NumberButton_Click;
@@ -114,7 +115,7 @@
             btn_2.Location = new Point(95, 331);
             btn_2.Name = "btn_2";
             btn_2.Size = new Size(86, 76);
-            btn_2.TabIndex = 1;
+            btn_2.TabIndex = 2;
             btn_2.Text = "2";
             btn_2.UseVisualStyleBackColor = true;
             btn_2.Click += NumberButton_Click;
@@ -126,7 +127,7 @@
             btn_3.Location = new Point(187, 331);
             btn_3.Name = "btn_3";
             btn_3.Size = new Size(86, 76);
-            btn_3.TabIndex = 2;
+            btn_3.TabIndex = 3;
             btn_3.Text = "3";
             btn_3.UseVisualStyleBackColor = true;
             btn_3.Click += NumberButton_Click;
@@ -138,21 +139,22 @@
             btn_0.Location = new Point(95, 413);
             btn_0.Name = "btn_0";
             btn_0.Size = new Size(86, 80);
-            btn_0.TabIndex = 9;
+            btn_0.TabIndex = 10;
             btn_0.Text = "0";
             btn_0.UseVisualStyleBackColor = true;
             btn_0.Click += NumberButton_Click;
             // 
-            // btn_comma
+            // btn_decimal
             // 
-            btn_comma.Dock = DockStyle.Fill;
-            btn_comma.Font = new Font("Microsoft Sans Serif", 12F);
-            btn_comma.Location = new Point(187, 413);
-            btn_comma.Name = "btn_comma";
-            btn_comma.Size = new Size(86, 80);
-            btn_comma.TabIndex = 16;
-            btn_comma.Text = ",";
-            btn_comma.UseVisualStyleBackColor = true;
+            btn_decimal.Dock = DockStyle.Fill;
+            btn_decimal.Font = new Font("Microsoft Sans Serif", 12F);
+            btn_decimal.Location = new Point(187, 413);
+            btn_decimal.Name = "btn_decimal";
+            btn_decimal.Size = new Size(86, 80);
+            btn_decimal.TabIndex = 16;
+            btn_decimal.Text = ",";
+            btn_decimal.UseVisualStyleBackColor = true;
+            btn_decimal.Click += NumberButton_Click;
             // 
             // btn_equal
             // 
@@ -161,7 +163,7 @@
             btn_equal.Location = new Point(279, 413);
             btn_equal.Name = "btn_equal";
             btn_equal.Size = new Size(87, 80);
-            btn_equal.TabIndex = 14;
+            btn_equal.TabIndex = 0;
             btn_equal.Text = "=";
             btn_equal.UseVisualStyleBackColor = true;
             btn_equal.Click += btn_equal_Click;
@@ -197,7 +199,7 @@
             btn_6.Location = new Point(187, 249);
             btn_6.Name = "btn_6";
             btn_6.Size = new Size(86, 76);
-            btn_6.TabIndex = 5;
+            btn_6.TabIndex = 6;
             btn_6.Text = "6";
             btn_6.UseVisualStyleBackColor = true;
             btn_6.Click += NumberButton_Click;
@@ -209,7 +211,7 @@
             btn_5.Location = new Point(95, 249);
             btn_5.Name = "btn_5";
             btn_5.Size = new Size(86, 76);
-            btn_5.TabIndex = 4;
+            btn_5.TabIndex = 5;
             btn_5.Text = "5";
             btn_5.UseVisualStyleBackColor = true;
             btn_5.Click += NumberButton_Click;
@@ -221,7 +223,7 @@
             btn_4.Location = new Point(3, 249);
             btn_4.Name = "btn_4";
             btn_4.Size = new Size(86, 76);
-            btn_4.TabIndex = 3;
+            btn_4.TabIndex = 4;
             btn_4.Text = "4";
             btn_4.UseVisualStyleBackColor = true;
             btn_4.Click += NumberButton_Click;
@@ -245,7 +247,7 @@
             btn_9.Location = new Point(187, 167);
             btn_9.Name = "btn_9";
             btn_9.Size = new Size(86, 76);
-            btn_9.TabIndex = 8;
+            btn_9.TabIndex = 9;
             btn_9.Text = "9";
             btn_9.UseVisualStyleBackColor = true;
             btn_9.Click += NumberButton_Click;
@@ -257,7 +259,7 @@
             btn_8.Location = new Point(95, 167);
             btn_8.Name = "btn_8";
             btn_8.Size = new Size(86, 76);
-            btn_8.TabIndex = 7;
+            btn_8.TabIndex = 8;
             btn_8.Text = "8";
             btn_8.UseVisualStyleBackColor = true;
             btn_8.Click += NumberButton_Click;
@@ -269,7 +271,7 @@
             btn_7.Location = new Point(3, 167);
             btn_7.Name = "btn_7";
             btn_7.Size = new Size(86, 76);
-            btn_7.TabIndex = 6;
+            btn_7.TabIndex = 7;
             btn_7.Text = "7";
             btn_7.UseVisualStyleBackColor = true;
             btn_7.Click += NumberButton_Click;
@@ -297,6 +299,7 @@
             btn_PlusMinus.TabIndex = 17;
             btn_PlusMinus.Text = "-/+";
             btn_PlusMinus.UseVisualStyleBackColor = true;
+            btn_PlusMinus.Click += NumberButton_Click;
             // 
             // btn_multiply
             // 
@@ -349,10 +352,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(369, 496);
             Controls.Add(tableLayoutPanel1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             Name = "Form_Calc";
-            Text = "Form1";
+            Text = "Kalkylatorn";
+            KeyDown += Form_Calc_KeyDown;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -365,7 +372,7 @@
         private Button btn_2;
         private Button btn_3;
         private Button btn_0;
-        private Button btn_comma;
+        private Button btn_decimal;
         private Button btn_equal;
         private Button btn_plus;
         private Button btn_minus;
