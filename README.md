@@ -8,16 +8,16 @@ För de elever i Programmering 2 som så önskar och har nödvändiga kunskaper 
 
 Branchen main i repository innehåller en enkel Windows Forms-kalkylatorapp, som utvecklas över flera branches för att demonstrera olika programmeringskoncept och praxis. Från en enklare kalkylator till en objektorienterad som är baserad på arkitekturen MVC (Model View Controller) är steget stort, varvid de brancherna bör ses som självständiga.
 
+## En möjlig grundläggande layout
+![alt text](/img/calc.jpg)
+
+
 ## Tekniska specifikationer
 - Programmeringsspråk: C#
 - Gränssnitt: Windows Forms
 - Permanent datalagring: json
 - Arkitektur: från enkel till MVC
 
-## Observera
-Ingen lösning i någon av brancherna är avsedda att betraktas som en "Production Build", alltså som en slutgiltig versionen redo för användning i en produktionsmiljö. De är fortfarande i utvecklingsfas.
-
-En orsak till att dela kod så här är ju att stimulera elever/studenter att själva göra en än bättre lösning! Laddas de ner görs detta på eget ansvar och helt på egen risk. Inget ansvar kan avkrävas utvecklaren!
 
 ## Branch-struktur
 - `main` (Programmering 1): Innehåller en grundläggande kalkylator med intentionella brister för elever att identifiera och förbättra.
@@ -33,3 +33,8 @@ Varje branch är självständig och innehåller en version av kalkylatorappen so
 För att klona repositoryt, öppna terminalen och kör följande kommando:
 ```bash
 git clone https://github.com/TeacherArea/PRG_WinForms_Calculator.git
+
+## Observera
+Ingen lösning i någon av brancherna är avsedda att betraktas som en "Production Build", alltså som en slutgiltig versionen redo för användning i en produktionsmiljö. De är fortfarande i utvecklingsfas.
+
+En orsak till att dela kod så här är ju att stimulera elever/studenter att själva göra en än bättre lösning! Laddas de ner görs detta på eget ansvar och helt på egen risk. Inget ansvar kan avkrävas utvecklaren!
