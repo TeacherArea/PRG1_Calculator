@@ -1,11 +1,17 @@
 namespace PRG1_Calculator
 {
+    /// <summary>
+    /// Mycket är gjort, men logiken haltar lite. Din uppgift blir att lösa detta, efter 
+    /// den gemensamma genomgången! För att därefter lyckas måste du använda Breakpoints
+    /// för att se vad som faktiskt finns i de globala variablerna. AI eller youtube är bra,
+    /// men inte helt perfekta för uppgiften ... Lycka till!
+    /// </summary>
     public partial class Form_Calculator : Form
     {
-        private double accumulator = 0;
-        private string operation = "";
-        private string buttonInput = "";
-        private double operand = 0;
+        private double operand = 0;         // global variabel för inmatat nummer
+        private string operation = "";      // global variabel för inmatat + - * eller /
+        private double accumulator = 0;     // global variabel för resultatet av beräknignar
+        private string buttonInput = "";    // global variabel för ... ja, vadå?
 
         public Form_Calculator()
         {
@@ -17,9 +23,7 @@ namespace PRG1_Calculator
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            buttonInput += button.Text;
-
-            if (txtB_Calculations.Text == "0") txtB_Calculations.Text = "";
+            operand += Convert.ToDouble(button.Text); // är det smart att göra detta här?
 
             txtB_Calculations.Text += button.Text;
             txtB_Result.Text = accumulator.ToString();
@@ -27,52 +31,32 @@ namespace PRG1_Calculator
 
         private void OperatorButton_Click(object sender, EventArgs e)
         {
-            if(accumulator != 0)
-            {
-                operand = accumulator;
-            }
-            else if (!double.TryParse(buttonInput, out operand))
-            {
-                txtB_Result.Text = "Ogiltig inmatning";
-                return;
-            }
-
-            if (accumulator != 0 ||  operation != "")
+            // för att få minus och gånger att fungera, där främst accumulator initialt inte kan vara 0
+            if (accumulator != 0 || operation != "")
             {
                 Calculate();
             }
             else
             {
-                accumulator = operand; // för att få minus och gånger att fungera, där accumulator initialt inte kan vara 0
+                accumulator = operand;
             }
 
             Button button = (Button)sender;
             operation = button.Text;
-
-            buttonInput = "";
-            operand = 0;
-
-            txtB_Calculations.Text += " " + operation + " ";
-            txtB_Result.Text = accumulator.ToString();
+           
         }
 
         private void btn_equal_Click(object sender, EventArgs e)
         {
-            if (!double.TryParse(buttonInput, out operand))
-            {
-                txtB_Calculations.Text = "Ingen ny inmatning gjord.";
-                return;
-            }
-
             Calculate();
 
             txtB_Result.Text = accumulator.ToString();
-
-            operation = "";
-            buttonInput = "";
-            operand = 0;
         }
 
+        /// <summary>
+        /// En egen funktion för själva beräkningen, och inget annat
+        /// (förutom extra felhantering vid division).
+        /// </summary>
         private void Calculate()
         {
             switch (operation)
@@ -99,14 +83,15 @@ namespace PRG1_Calculator
             operand = 0;
         }
 
+        /// <summary>
+        /// Är avsedd att hantera all nollställning av appens variabler, så att 
+        /// användaren inte ska behöva starta om eller att märkliga logiska fel
+        /// inträffar. Men den är inte klar än ...
+        /// </summary>
         private void btn_clear_Click(object sender, EventArgs e)
         {
             txtB_Calculations.Text = "";
             txtB_Result.Text = "0";
-            operand = 0;
-            accumulator = 0;
-            operation = "";
-            buttonInput = "";
         }
 
         private void btn_storeInMemory_Click(object sender, EventArgs e)
