@@ -3,7 +3,9 @@
 ## Översikt
 Välkommen till PRG1_Calculator, en pedagogisk resurs avsedd att stödja lärandet av programmering för studenter som går kurserna Programmering 1 och Programmering 2.
 
-Gränssnittet som används är Windows Forms, och orsaken är att användning av dess TableLayoutPanel och FloatLayoutPanel ger en bra ingång till förståelsen för först HTML/CSS Grid och Flexbox samt senare MAUI:s använding av XAML:s StackLayout, AbsoluteLayout, Grid och FlexLayout. För de elever i Programmering 2 som önskar gå händelserna i förväg kan självklart använda denna kod i MAUI (eller liknande), men dessa tekniker planeras att övergå till i kursen när denna övning är inlämnad. 
+Gränssnittet som används är Windows Forms, och orsaken är att användning av dess TableLayoutPanel och FloatLayoutPanel ger en bra ingång till förståelsen för först HTML/CSS Grid och Flexbox samt senare MAUI:s använding av XAML:s StackLayout, AbsoluteLayout, Grid och FlexLayout.
+
+För de elever i Programmering 2 som så önskar och har nödvändiga kunskaper (!), kan kod och arktiektur relativt enkelt översättas till MAUI (eller liknande), men dessa tekniker planeras att läras ut först senare i kursen (när denna övning är inlämnad). 
 
 Branchen main i repository innehåller en enkel Windows Forms-kalkylatorapp, som utvecklas över flera branches för att demonstrera olika programmeringskoncept och praxis. Från en enklare kalkylator till en objektorienterad som är baserad på arkitekturen MVC (Model View Controller) är steget stort, varvid de brancherna bör ses som självständiga.
 
