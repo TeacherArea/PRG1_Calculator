@@ -9,10 +9,10 @@ För de elever i Programmering 2 som så önskar och har nödvändiga kunskaper 
 Branchen main i repository innehåller en enkel Windows Forms-kalkylatorapp, som utvecklas över flera branches för att demonstrera olika programmeringskoncept och praxis. Från en enklare kalkylator till en objektorienterad som är baserad på arkitekturen MVC (Model View Controller) är steget stort, varvid de brancherna bör ses som självständiga.
 
 ## Tekniska specifikationer
-Programmeringsspråk: C#
-Gränssnitt: Windows Forms
-Permanent datalagring: json
-Arkitektur: från enkel till MVC
+- Programmeringsspråk: C#
+- Gränssnitt: Windows Forms
+- Permanent datalagring: json
+- Arkitektur: från enkel till MVC
 
 ## Observera
 Ingen lösning i någon av brancherna är avsedda att betraktas som en "Production Build", alltså som en slutgiltig versionen redo för användning i en produktionsmiljö. De är fortfarande i utvecklingsfas.
