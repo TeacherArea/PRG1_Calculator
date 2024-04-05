@@ -1,11 +1,14 @@
+using System.Diagnostics;
+
 namespace PRG1_Calculator
 {
     public partial class Form_Calculator : Form
     {
+        private double operand = 0;
         private double accumulator = 0;
         private string operation = "";
-        private string buttonInput = "";
-        private double operand = 0;
+        private string numberInput = "";
+        private string equalSign = "";
 
         public Form_Calculator()
         {
@@ -17,7 +20,7 @@ namespace PRG1_Calculator
         private void NumberButton_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
-            buttonInput += button.Text;
+            numberInput += button.Text;
 
             if (txtB_Calculations.Text == "0") txtB_Calculations.Text = "";
 
@@ -27,14 +30,15 @@ namespace PRG1_Calculator
 
         private void OperatorButton_Click(object sender, EventArgs e)
         {
-            if(accumulator != 0)
-            {
-                operand = accumulator;
-            }
-            else if (!double.TryParse(buttonInput, out operand))
+            if (!double.TryParse(numberInput, out operand))
             {
                 txtB_Result.Text = "Ogiltig inmatning";
                 return;
+            }
+
+            if (accumulator != 0 && equalSign == "=")
+            {
+                operand = accumulator;
             }
 
             if (accumulator != 0 ||  operation != "")
@@ -43,14 +47,15 @@ namespace PRG1_Calculator
             }
             else
             {
-                accumulator = operand; // för att få minus och gånger att fungera, där accumulator initialt inte kan vara 0
+                accumulator = operand;
             }
 
             Button button = (Button)sender;
             operation = button.Text;
 
-            buttonInput = "";
+            numberInput = "0";
             operand = 0;
+            equalSign = "";
 
             txtB_Calculations.Text += " " + operation + " ";
             txtB_Result.Text = accumulator.ToString();
@@ -58,7 +63,10 @@ namespace PRG1_Calculator
 
         private void btn_equal_Click(object sender, EventArgs e)
         {
-            if (!double.TryParse(buttonInput, out operand))
+            Button button = (Button)sender;
+            equalSign = button.Text;
+
+            if (!double.TryParse(numberInput, out operand))
             {
                 txtB_Calculations.Text = "Ingen ny inmatning gjord.";
                 return;
@@ -69,7 +77,7 @@ namespace PRG1_Calculator
             txtB_Result.Text = accumulator.ToString();
 
             operation = "";
-            buttonInput = "";
+            numberInput = "0";
             operand = 0;
         }
 
@@ -106,7 +114,8 @@ namespace PRG1_Calculator
             operand = 0;
             accumulator = 0;
             operation = "";
-            buttonInput = "";
+            numberInput = "";
+            equalSign = "";
         }
 
         private void btn_storeInMemory_Click(object sender, EventArgs e)
